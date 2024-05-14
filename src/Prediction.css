@@ -1,0 +1,35 @@
+
+
+.Digit {
+    font-size: 50px;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.Buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    display: none;
+}
+
+.Buttons > button {
+    flex: 1;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid grey;
+}
+
+.Buttons > button.correct {
+    background-color: #81c784;
+}
+.Buttons > button.correct:hover {
+    background-color: #b7deb8;
+}
+
+.Buttons > button.incorrect {
+    background-color: #ff8a65;
+}
+.Buttons > button.incorrect:hover {
+    background-color: #ffbba7;
+}
