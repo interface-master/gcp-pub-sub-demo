@@ -9,6 +9,10 @@ interface Point {
     y: number;
 }
 
+interface PostCoordinates {
+    points: Point[]
+}
+
 function Canvas(props: CanvasProps) {
     const { className } = props;
 
@@ -69,7 +73,11 @@ function Canvas(props: CanvasProps) {
     // data flow
 
     const sendDrawingData = () => {
-        console.log('payload size: ', JSON.stringify(pointsList).length, 'sending...', pointsList);
+        const data: PostCoordinates = {
+            points: pointsList
+        };
+        const payload = JSON.stringify(data);
+        console.log('payload size: ', payload.length, 'sending...', data);
     }
 
     // return
