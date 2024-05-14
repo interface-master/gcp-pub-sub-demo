@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './Prediction.css';
 
@@ -17,9 +17,11 @@ function Prediction(props: PredictionProps) {
     }
 
     // TODO: Remove this mock
-    setInterval( () => handlePredictionMessage(
-        String.fromCharCode(Math.floor(Math.random() * 26) + 97)
-    ), 5000 );
+    useEffect(() => {
+        setInterval( () => handlePredictionMessage(
+            String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+        ), 5000 );
+    }, [])
 
     return (
         <div className={className}>
