@@ -1,0 +1,13 @@
+.Container {
+    display: flex;
+    flex-direction: row;
+}
+
+.Canvas {
+    padding: 16px;
+    border: 1px solid grey;
+}
+
+.Prediction {
+    padding: 16px;
+}
