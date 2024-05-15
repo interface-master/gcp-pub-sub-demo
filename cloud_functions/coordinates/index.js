@@ -2,14 +2,7 @@ const functions = require('@google-cloud/functions-framework');
 const { PubSub } = require('@google-cloud/pubsub');
 
 functions.http('coordinates', (req, res) => {
-
-  if (req.method === 'OPTIONS') {
-    res.set('Access-Control-Allow-Methods', 'GET, POST');
-    res.set('Access-Control-Allow-Headers', 'Content-Type');
-    res.set('Access-Control-Max-Age', '3600');
-    res.status(204).send('');
-  
-  } else if (req.method === 'POST') {
+  if (req.method === 'POST') {
     const points = req.body;
 
     const pubsubClient = new PubSub();
